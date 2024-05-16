@@ -23,6 +23,12 @@
                 </nav>
             </div>
         </header>
+
+        <div id="chatbot-notification" class="chatbot-notification">
+            <p>Welcome! Click the chat icon in the bottom right corner to chat with Roger, our AI-powered customer support assistant.</p>
+            <button id="close-notification">Got it!</button>
+        </div>
+
     </body>
     <main>
 
@@ -109,6 +115,24 @@
                 v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
             })(document, 'script');
           </script>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var notification = document.getElementById('chatbot-notification');
+                var closeButton = document.getElementById('close-notification');
+        
+                // Show the notification after a delay
+                setTimeout(function() {
+                    notification.style.display = 'block';
+                }, 3000); // 3 seconds delay
+        
+                // Hide the notification when the close button is clicked
+                closeButton.addEventListener('click', function() {
+                    notification.style.display = 'none';
+                });
+            });
+        </script>
+
     </main>
     
 </html>
